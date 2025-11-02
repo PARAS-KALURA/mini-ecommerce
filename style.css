@@ -1,0 +1,92 @@
+
+
+*{
+    margin: 0;padding: 0;
+    box-sizing: border-box;
+    
+}
+
+body {
+     font-family: Arial, sans-serif; 
+    background-color: #F2F8FF;
+    color: #333;
+  }
+
+header{
+    
+    margin:10px;
+    background: linear-gradient(45deg, #4facfe, #00f2fe);
+    max-width: 100%;
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    align-items: center;
+      box-shadow: 2px 6px 5px 0 rgba(0, 0, 0, 0.3);
+
+    
+}
+
+header #totalCount{
+    font-size: 2rem;
+}
+
+
+
+main {
+    display: flex;
+    gap: 20px;
+
+
+}
+
+.product-card{
+    border: 2px solid black;
+    border-radius: 10PX;
+    padding: 10px;
+    box-shadow: 2px 4px 3px;
+    background-color: #FFFFFF;
+}
+
+.btn{
+    background: #2B8CFF;
+    color: white;
+    padding :10px 16px;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    font: bold;
+    margin-top: 10px;
+}
+
+.cart-2{
+    border: 2px solid black;
+    width: 300px;
+    border-radius: 10px;
+    background-color: #FFFFFF;
+}
+
+.cart-2 h2{
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.cart-2 p{
+    margin-bottom: 20px;
+   
+}
+
+.btn-2{
+    background-color: #FF5252;
+    outline: none;
+    border: none;
+    padding: 9px 18px;
+    color: white;
+    border-radius: 4px;
+    font: bold;
+}
+
+.cart-2 div{
+     padding: 10px;
+}
