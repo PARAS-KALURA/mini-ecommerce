@@ -1,58 +1,42 @@
-const addbtn = document.querySelectorAll(".btn");
-const cartBtn = document.getElementById("cBtn");
-const cartBadge = document.getElementById("totalCount");
 
-
-const cartContainer = document.querySelector(".cart-2");
-
-const cartText = document.getElementById("cartText");
+// 1. Select elements
+const addCart = document.querySelectorAll(".btn");
+const clearCart = document.getElementById("cBtn");
+const totalCount = document.getElementById("totalCount");
 const totalItems = document.getElementById("totalItems");
+const cartText = document.getElementById("cartText");
 const totalPrice = document.getElementById("totalPrice");
 
 
-
-
-// 🛒 Part 2 — Store product data
-// We’ll keep an array for the cart (like cart = ////[]).
-
+// 2. store product data
 let cart = [];
 
 
 
+// 3.Add to cart
 
-// ➕ Part 3 — Add to cart
-// When you click “Add to Cart,” we’ll:
-// Add that product to the array.
-
-// Increase total count.
-
-// Update total price.
-
-
-// 🧠 Goal
-
-// When you click any “Add to Cart” button:
-
-// That product (name + price) gets added to the cart array.
-
-// The total count increases.
-
-// The total price updates in the cart section and badge.
-
-
-
-addbtn.forEach((btn) => {
+addCart.forEach((btn) => {
     btn.addEventListener("click", (e) => {
-        const card = e.target.closest("product-card");
+      const product = e.target.closest(".product-card");
+      
+      
+    const name = product.querySelector("h2").textContent;
+    const span = product.querySelector("span").textContent;
+    const imgSrc = product.querySelector("img").src;
+    const price = Number(span.replace("₹", "").trim());
+
+ // add this product to the cart array
+    cart.push({name,price});
+
+    // update totals and UI
+    console.log(cart);
+    
+    
+    
+    
+
+    
     })
 })
-
-let cats = [];
-
-
-
-
-
-
 
 
