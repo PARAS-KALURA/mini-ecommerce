@@ -47,6 +47,8 @@ addbtn.forEach((btn) => {
     })
 })
 
+let cats = [];
+
 
 
 
