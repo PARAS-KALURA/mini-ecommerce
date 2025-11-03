@@ -16,27 +16,39 @@ let cart = [];
 // 3.Add to cart
 
 addCart.forEach((btn) => {
-    btn.addEventListener("click", (e) => {
-      const product = e.target.closest(".product-card");
-      
-      
+  btn.addEventListener("click", (e) => {
+    const product = e.target.closest(".product-card");
+    console.log(product);
+
     const name = product.querySelector("h2").textContent;
-    const span = product.querySelector("span").textContent;
-    const imgSrc = product.querySelector("img").src;
-    const price = Number(span.replace("₹", "").trim());
+    const priceText = product.querySelector("span").textContent;
+    const price = Number(priceText.replace("₹","").trim());
 
- // add this product to the cart array
     cart.push({name,price});
-
-    // update totals and UI
-    console.log(cart);
-    
-    
-    
-    
-
-    
-    })
+    updateCartDisplay();
+  })
 })
 
+function updateCartDisplay() {
+  // calculate total price using replace();
+ 
+  const total = cart.reduce((sum,item) => sum + item.price,0);
+  
+
+  // update counts and price on UI
+  totalCount.textContent = cart.length; // top cart
+  totalItems.textContent = `Total items: ${cart.length}`;
+  totalPrice.textContent = `Total price: ${total.toFixed(2)}`;
+  console.log(cart);
+
+  // show message based on cart status
+
+  cartText.textContent = 
+  cart.length === 0? "Your card is empty": "Items added to cart";
+}
+
+clearCart.addEventListener("click", () => {
+cart = []
+updateCartDisplay();
+})
 
