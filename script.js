@@ -18,22 +18,21 @@ let cart = [];
 addCart.forEach((btn) => {
   btn.addEventListener("click", (e) => {
     const product = e.target.closest(".product-card");
-    console.log(product);
 
     const name = product.querySelector("h2").textContent;
     const priceText = product.querySelector("span").textContent;
-    const price = Number(priceText.replace("₹","").trim());
+    const price = Number(priceText.replace("₹", "").trim());
 
-    cart.push({name,price});
+    cart.push({ name, price });
     updateCartDisplay();
   })
 })
 
 function updateCartDisplay() {
   // calculate total price using replace();
- 
-  const total = cart.reduce((sum,item) => sum + item.price,0);
-  
+
+  const total = cart.reduce((sum, item) => sum + item.price, 0);
+
 
   // update counts and price on UI
   totalCount.textContent = cart.length; // top cart
@@ -43,12 +42,12 @@ function updateCartDisplay() {
 
   // show message based on cart status
 
-  cartText.textContent = 
-  cart.length === 0? "Your card is empty": "Items added to cart";
+  cartText.textContent =
+    cart.length === 0 ? "Your card is empty" : "Items added to cart";
 }
 
 clearCart.addEventListener("click", () => {
-cart = []
-updateCartDisplay();
+  cart = []
+  updateCartDisplay();
 })
 
